@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<title>Profile</title>
+</head>
+
+
+<body>
+
+	<div class="container">
+		<h2>Profile of "<span th:text=" ${professor.fullName}">test</span>"</h2> 
+	    
+		<hr> <br>
+	  
+		<ul class="list-group">
+			<li th:text="'Full name: ' + ${professor.fullName}" class="list-group-item"></li>
+			<li th:text="'Specialty: ' + ${professor.specialty}" class="list-group-item"></li>
+		</ul>
+	    
+		<hr>
+		
+	  
+		<p>
+			<a th:href="@{/professor/dashboard}" class="btn btn-danger btn-sm mb-3">Back</a>
+	    	<a th:href="@{/professor/showFormForUpdate}" class="btn btn-primary btn-sm mb-3">Edit Profile</a>
+		</p>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<title>Set Threshold</title>
+</head>
+
+
+<body>
+	<div class="container">
+	
+		<h3>Set Threshold</h3>
+		<hr>
+	
+		<form th:action="@{/professor/assignSubjectToStudent(subjectId=${subjectId},option=${option})}"
+						 th:object="${thesis}" method="POST">
+				
+			<label>Average courses grade</label>
+			<input type="number" step="0.01" th:value="${averageCoursesGrade}" name="averageCoursesGrade"
+					class="form-control mb-4 col-4" placeholder="Average courses grade" required>
+					
+			<label>Number of remaining courses for graduation</label>
+			<input type="number" th:value="${numberOfRemainingCourses}" name="numberOfRemainingCourses"
+					class="form-control mb-4 col-4" placeholder="Number of remaining courses for graduation" required>
+				
+			<button type="submit" class="btn btn-info col-2">Continue</button>
+						
+		</form>
+	
+		<hr>
+		<a th:href="@{/professor/assignSubjectOptions(subjectId=${subjectId})}">Back to list</a>
+		
+	</div>
+
+</body>
+</html>

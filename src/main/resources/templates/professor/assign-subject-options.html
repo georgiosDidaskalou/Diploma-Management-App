@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<title>Assign Options</title>
+</head>
+
+
+<body>
+	<div class="container">
+	
+		<h2>Select option</h2>
+		<hr> <br>
+	
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Option</th>
+					<th scope="col">Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td scope="col">1</td>
+					<td scope="col">Random choice</td>
+					<td>
+						<a th:href="@{/professor/assignSubjectToStudent(subjectId=${subjectId},option=1)}"
+							class="btn btn-info btn-sm">
+							Select
+						</a>						
+					</td>
+				</tr>
+				<tr>
+					<td scope="col">2</td>
+					<td scope="col">Best Average Courses Grade</td>
+					<td>
+						<a th:href="@{/professor/assignSubjectToStudent(subjectId=${subjectId},option=2)}"
+							class="btn btn-info btn-sm">
+							Select
+						</a>						
+					</td>
+				</tr>
+				<tr>
+					<td scope="col">3</td>
+					<td scope="col">Fewest remaining courses</td>
+					<td>
+						<a th:href="@{/professor/assignSubjectToStudent(subjectId=${subjectId},option=3)}"
+							class="btn btn-info btn-sm">
+							Select
+						</a>						
+					</td>
+				</tr>
+				<tr>
+					<td scope="col">4</td>
+					<td scope="col">Student with average courses grade greater than a given threshold Th1 and number of remaining courses for graduation less than a given threshold Th2</td>
+					<td>
+						<a th:href="@{/professor/showThresholdForm(subjectId=${subjectId},option=4)}"
+							class="btn btn-info btn-sm">
+							Select
+						</a>						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<hr>		
+	</div>
+
+</body>
+</html>

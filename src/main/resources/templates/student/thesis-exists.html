@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<title>Thesis exists</title>
+</head>
+
+
+<body>
+
+	<div class="container">
+	
+	    <h1>You cannot see/apply to any subject</h1>
+	    
+	    <hr> <br>
+	    
+	    <p>You have accepted to a diploma thesis subject.</p>
+	    <p>For this reason, you cannot see/apply to any other diploma thesis subject.</p>
+	    
+	    <br> <hr> <br>
+	    
+	    <a th:href="@{/student/dashboard}" class="btn btn-danger btn-sm mb-3">Back</a>
+	</div>
+
+</body>
+</html>

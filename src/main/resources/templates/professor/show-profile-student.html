@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<title>Profile</title>
+</head>
+
+
+<body>
+
+	<div class="container">
+		<h2>Profile of "<span th:text=" ${student.fullName}">test</span>"</h2> 
+	    
+		<hr> <br>
+	  
+		<ul class="list-group">
+			<li th:text="'Full name: ' + ${student.fullName}" class="list-group-item"></li>
+			<li th:text="'Year of studies: ' + ${student.yearOfStudies}" class="list-group-item"></li>
+			<li th:text="'Current average grade: ' + ${student.currentAverageGrade}" class="list-group-item"></li>
+			<li th:text="'Number of remaining courses for graduation: ' + ${student.numberOfRemainingCourses}" class="list-group-item"></li>
+		</ul>
+	    
+		<hr>
+		<p>
+			<button type="button" onclick="goBack()" class="btn btn-danger btn-sm mb-3">Back</button>
+	
+	    	<script>
+		        function goBack() {
+		            history.back();
+		        }
+		    </script>
+		</p>
+	  
+
+	</div>
+
+</body>
+</html>

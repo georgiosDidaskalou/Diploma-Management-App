@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<title>Available diploma thesis</title>
+</head>
+
+
+<body>
+	<div class="container">
+	
+		<h2>Available diploma thesis</h2> 
+	    
+		<hr> <br>
+		
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Title</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="currentSubject, counter : ${subjects}">
+					<th th:text="${counter.index + 1}" scope="col">#</th>
+					<td>							
+						<a th:text="${currentSubject.title}" th:href="@{/student/showSubjectDetail(subjectId=${currentSubject.id})}">
+							Title
+						</a>
+					</td>
+					
+				</tr>
+			</tbody>
+		</table>
+		
+		<hr>
+	
+		<p>
+			<a th:href="@{/student/dashboard}" class="btn btn-danger btn-sm mb-3">Back</a>
+		</p>
+	</div>
+</body>
+</html>

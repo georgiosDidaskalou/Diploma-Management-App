@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<title>Profile</title>
+</head>
+
+
+<body>
+
+	<div class="container">
+	
+	    <h1>There is no information for this user</h1>
+	    
+	    <hr> <br>
+	    
+	    <p>In order to continue, you have to create your profile!</p>
+	    
+	    <br> <hr> <br>
+	    
+	    <a th:href="@{/professor/dashboard}" class="btn btn-danger btn-sm mb-3">Back</a>
+	    <a th:href="@{/professor/showFormForAdd}" class="btn btn-primary btn-sm mb-3">Create Profile</a>
+	</div>
+
+</body>
+</html>

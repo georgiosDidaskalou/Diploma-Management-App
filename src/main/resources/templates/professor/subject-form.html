@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<title>Add subject</title>
+</head>
+
+
+<body>
+	<div class="container">
+	
+		<h3>New Subject</h3>
+		<hr>
+	
+		<form th:action="@{/professor/saveSubject}"
+						 th:object="${subject}" method="POST">
+		
+			<!-- Add hidden form field to handle update -->
+			<input type="hidden" th:field="*{professor.id}" />
+			
+			<label>Title</label>
+			<input type="text" th:field="*{title}"
+					class="form-control mb-4 col-4" placeholder="Title" required>
+					
+			<label>Objectives</label>
+			<input type="text" th:field="*{objectives}"
+					class="form-control mb-4 col-4" placeholder="Objectives" required>
+				
+			<button type="submit" class="btn btn-info col-2">Save</button>
+						
+		</form>
+	
+		<hr>
+		<a th:href="@{/professor/listProfessorSubjects}">Back to list</a>
+		
+	</div>
+
+</body>
+</html>

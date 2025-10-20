@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<title>Thesis</title>
+</head>
+
+
+<body>
+	<div class="container">
+	
+		<h2>Thesis</h2>
+		<hr> <br>
+		
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Title of Subject</th>
+					<th scope="col">Student</th>
+					<th scope="col">Implementation</th>
+					<th scope="col">Report</th>
+					<th scope="col">Presentation</th>
+					<th scope="col">Overall</th>
+					<th scope="col">Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="currentThesis, counter : ${thesis}">
+					<th th:text="${counter.index + 1}" scope="col">#</th>
+					<td>							
+						<a th:text="${currentThesis.subject.title}" th:href="@{/professor/showSubjectDetail(subjectId=${currentThesis.subject.id})}">
+							Title
+						</a>
+					</td>
+					<td>
+						<a th:text="${currentThesis.student.fullName}" th:href="@{/professor/showProfileStudent(studentId=${currentThesis.student.id})}">
+							Full Name
+						</a>
+					</td>
+					<td th:text="${currentThesis.implementationGrade != null} ? ${currentThesis.implementationGrade} : '-'" scope="col">Implementation Grade</td>
+					<td th:text="${currentThesis.reportGrade != null} ? ${currentThesis.reportGrade} : '-'" scope="col">Report</td>
+					<td th:text="${currentThesis.presentationGrade != null} ? ${currentThesis.presentationGrade} : '-'" scope="col">Presentation</td>
+					<td th:text="${currentThesis.overallGrade != null} ? ${currentThesis.overallGrade} : '-'" scope="col">Overall</td>
+					<td>
+						<a th:href="@{/professor/showFormForUpdateThesis(thesisId=${currentThesis.id})}"
+							class="btn btn-info btn-sm">
+							Update
+						</a>					
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<hr>
+	
+		<p>
+			<a th:href="@{/professor/dashboard}" class="btn btn-danger btn-sm mb-3">Back</a>
+		</p>
+	</div>
+</body>
+</html>
